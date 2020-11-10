@@ -17,5 +17,6 @@ public class rooms { //funkcja która odpowiada za sprawdzanie czy przeszło si�
     }
     public void room2(){
         System.out.println("treść poziomu drugiego...");
+        //gowno
     }
 }
