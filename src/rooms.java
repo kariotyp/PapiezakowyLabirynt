@@ -3,6 +3,8 @@
 // (powered by FernFlower decompiler)
 //
 
+import com.sun.jdi.InconsistentDebugInfoException;
+
 import java.awt.desktop.ScreenSleepEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +51,8 @@ public class rooms {
     }
 
     public void room1() {
-        System.out.println("Budzisz sie....nie wiesz gdzie jesteś......jest ciemno....mokro.....i śmierdzi kremówką.......szukasz po omacku czegokolwiek co mogłoby pomóc....łapiesz coś podłóżnego.......chudego......szukasz dalej.....dalej......znajdujesz coś co w dotyku przypomina latarke.........zapalasz.......widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka.........tutaj jest pełno szkieletów.......wszytkie to dzieci.........słyszysz gdzieś ryki potwora........pamiętasz........złapało coś cie na ulicy kiedy wracałeś.....ale skąd?........jedno jest pewne........MUSISZ UCIEKAĆ");
-        System.out.println("Dobiegasz do pierwszego rozwidlenia. Widzisz drzwi, 2 pary drzwi");
+        System.out.println("Budzisz sie.... nie wiesz gdzie jesteś...... jest ciemno.... mokro..... i śmierdzi kremówką....... szukasz po omacku czegokolwiek co mogłoby pomóc.... łapiesz coś podłóżnego....... chudego...... szukasz dalej..... dalej...... znajdujesz coś co w dotyku przypomina latarke......... zapalasz....... widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka......... tutaj jest pełno szkieletów....... wszytkie to dzieci......... słyszysz gdzieś ryki potwora........ pamiętasz........ złapało coś cie na ulicy kiedy wracałeś..... ale skąd?........ jedno jest pewne........ MUSISZ UCIEKAĆ");
+        System.out.println("Dobiegasz do pierwszego rozwidlenia. Widzisz drzwi, 2 pary drzwi.\n Nad drzwiami widzisz wiersz, wygląda na... zagadkę? Może to być podpowiedź, którymi drzwiami przejść");
         System.out.println("Gdy powstał świat,\nja już tam byłam,\ngdy ewolucja postępowała,\nja już tam byłam,\nwszystkie wojny,\nprzetrwałam,\nmój wiek jest tajemnicą,\ndumnie zasiadam w królestwie herbaty,\ncały świat jest mi poddany,\nkim jestem?");
         System.out.println("Które drzwi wybierasz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi");
         this.drzwi = this.scanner.nextInt();
@@ -65,11 +67,11 @@ public class rooms {
     }
 
     public void room2() {
-        System.out.println("Udało sie, dałeś rade, przypominasz sobie, że wracałeś z pizzeri.......ale dokąd?........którędy?....nie masz czasu sie zastanawiać, słyszysz za sobą ryki potwora........");
-        System.out.println("Biegniesz......coraz więcej zakrętów........ryki ucichły nieco....masz troche czasu....... dobiegasz do kolejnego rozwidlenia");
+        System.out.println("Udało sie, dałeś rade, przypominasz sobie, że wracałeś z pizzeri....... ale dokąd?........ którędy?.... nie masz czasu sie zastanawiać, słyszysz za sobą ryki potwora........");
+        System.out.println("Biegniesz...... coraz więcej zakrętów........ ryki ucichły nieco.... masz troche czasu....... dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz drzwi, 3 pary, na każdych jest nazwisko:");
         System.out.println("[1] - Krzysztof Krawczyk\n[2] - Zbigniew Wodecki\n[3] - Kamil Bednarek");
-        System.out.println("Nad drzwiami zaś widzisz pytanie \"Me życie to bajka,w której gram role grajka,nie obchodzi mnie rasa,religia czy pejs, ja po prostu chce popłynąć statkiem w piękny rejs,kim jestem?\"");
+        System.out.println("Nad drzwiami zaś widzisz kolejny wiersz \"Me życie to bajka,w której gram role grajka,nie obchodzi mnie rasa,religia czy pejs, ja po prostu chce popłynąć statkiem w piękny rejs,kim jestem?\"");
         System.out.println("Które drzwi wybierasz?");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
@@ -83,13 +85,13 @@ public class rooms {
 
     public void room3() {
         String[] answers = {"puszka", "butelka", "telewizor"};
-        System.out.println("Pamiętasz....kolejny szczegół.....byłeś......jesteś uczniem....7 klasa.....prawdopodobnie......ale co tu robisz?....jak sie tu znalazłeś?........kolejne drzwi....gdzie ty jesteś.......co?.....(");
+        System.out.println("Pamiętasz.... kolejny szczegół..... byłeś...... nie, jesteś uczniem.... 7 klasa..... prawdopodobnie...... ale co tu robisz?.... jak sie tu znalazłeś?........ kolejne drzwi.... gdzie ty jesteś....... co?.....");
         System.out.println("Widzisz 3 guziki: " + answers[0] + ", " + answers[1] + ", " + answers[2] + ".\nNad przyciskami wisi zagadka.");
         String odp;
             System.out.println("\"Na fotelu siedze ja,\nczasem tu są niezłe jaja,\nsiedze tutaj cały dzień,\nco oglądam proszę ja cie?\"");
             odp = scanner.next();
             if (odp.equals(answers[2])) { //zamieniłem zwykłe odpowiedzi na tablice
-                System.out.println("\"Siedze dalej,\npudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
+                System.out.println("\"Siedze dalej, pudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
                 odp = scanner.next();
                 if (odp.equals(answers[0])) {
                     System.out.println("\"Przyszedł boczek, przyszła i menda,\njak powita gości zrzęda?\"");
@@ -98,7 +100,7 @@ public class rooms {
                         System.out.println("Jam jest Ferdynand Kiepski,\nbestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi,\nostrzegam tego co to czyta aby uciekał czem prędzej przez trzecie drzwi!");
                         przejsciePrzezDrzwi = true;
                     } else {
-                        System.out.println("Nie potrafisz rozwiązać zagadki, słysząc bestie coraz bliżej w panice wchodzisz w którekolwiek drzwi z nadzieją że to te dobre ");
+                        System.out.println("Nie potrafisz rozwiązać zagadki, słysząc bestie coraz bliżej w panice przechodzisz przez którekolwiek drzwi z nadzieją że to te dobre ");
                         przejsciePrzezDrzwi = false;
                     }
                 }
@@ -110,8 +112,9 @@ public class rooms {
     }
 
     public void room4() {
-        System.out.println("Biegniesz dalej, kolejna zagadka,kolejne rozwidlenie,zupełnie jak w tym hotelu..........w hotelu?.....\n" + "Dobiegasz do kolejnej zagadki.\n");
+        System.out.println("Biegniesz dalej, kolejna zagadka, kolejne rozwidlenie, zupełnie jak w tym hotelu.......... w hotelu?.....\nDobiegasz do kolejnej zagadki.\n");
         System.out.println("qij T një R nënës Z nënës E qij qij një esbek ndyrë pështy C një lavire në fytyrë,I në mbrëmje, në mëngjes derisa qij është i vdekur E harruar");
+        System.out.println("Masz do wyboru 3 pary drzwi. Które wybierasz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi\n[3] - trzecie drzwi");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1, 2 -> this.przejsciePrzezDrzwi = false;
@@ -123,23 +126,27 @@ public class rooms {
     }
 
     public void room5() {
-        System.out.println("Pamiętasz więcej,byłeś uczniem,jechaliście na wycieczke,pamiętasz jak poszedłeś z kolegami na pizze,oni cie zostawili?.....nie to chyba nie to.....dobiegasz do kolejnego rozwidlenia");
-        System.out.println("Widzisz przed sobą 5 przycisków o kształtach od lewej: marchewka,coś na kształt szpinaku,brokuł,jabłko,banan");
-        System.out.println("nad nimi widzisz jak ogniste litery tworzą napis ,,Jak mi dadzą to jem' '");
-        this.drzwi = this.scanner.nextInt();
-        switch (this.drzwi) {
-            case 1, 5, 4, 3 -> this.przejsciePrzezDrzwi = false;
-            case 2 -> this.przejsciePrzezDrzwi = true;
+        String[] answers = {"marchewka", "szpinak", "brokuł", "jabłko", "banan"};
+        System.out.println("Pamiętasz więcej, byłeś uczniem. Jechaliście na wycieczke, pamiętasz jak poszedłeś z kolegami na pizze... oni cie zostawili?..... nie, to chyba nie to..... dobiegasz do kolejnego rozwidlenia");
+        System.out.println("Widzisz przed sobą 5 par drzwi, na każdych jest narysowane jedzenie.");
+        for(int i = 0; i < answers.length; i++) System.out.println("[" + i + "] - " + answers[i]);
+        System.out.println("Nad drzwiami widzisz ogniste litery które tworzą napis \"Jak mi dadzą to jem\"");
+        System.out.println("Przez które drzwi przechodzisz? [1-5]");
+        drzwi = scanner.nextInt();
+        drzwi--;
+        switch (drzwi) {
+            case 0, 2, 3, 4 -> przejsciePrzezDrzwi = false;
+            case 1 -> przejsciePrzezDrzwi = true;
             default -> System.out.println("Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś HAHAHAHAHHAAHA (o ╹‿ ╹ o)");
         }
-        this.przejscie(this.przejsciePrzezDrzwi);
-        this.room6();
+        przejscie(przejsciePrzezDrzwi);
+        room6();
     }
 
     public void room6() {
-        System.out.println("Czujesz w głębi serca że coraz bardziej bestia zbliża sie do ciebie,boisz sie jak nigdy dotąd,po ostatniej zagadce czujesz że jeśli nie wytężysz swej głowy i nie pośpieszysz sie z odpowiedziami, ZGINIESZ.");
-        System.out.println("Wbiegasz do następnego pokoju widzisz przed sobą kolejne 2 pary drzwi,gdy sie rozglądasz zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz....łóżko,czujesz że bestia jest coraz bliżej musisz szybko podjąć decyzje czy przeszukać łóżko szukając czegoś użytecznego czy wbiec w któreś drzwi");
-        System.out.println("[1] chowam sie" + "[2]ide dalej");
+        System.out.println("Czujesz w głębi serca, że coraz bardziej bestia zbliża sie do ciebie. Boisz sie jak nigdy dotąd, po ostatniej zagadce czujesz że jeśli nie wytężysz swej głowy i nie pośpieszysz sie z odpowiedziami, ZGINIESZ.");
+        System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu szukając czegoś użytecznego czy uciec przez któreś drzwi");
+        System.out.println("[1] Chowam się pod łóżkiem w poszukianiu czegoś użytecznego\n[2]Uciekam dalej");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1 -> {
