@@ -48,8 +48,9 @@ public class rooms {
 
     public void room1() {
         System.out.println("Budzisz sie....nie wiesz gdzie jesteś......jest ciemno....mokro.....i śmierdzi kremówką.......szukasz po omacku czegokolwiek co mogłoby pomóc....łapiesz coś podłóżnego.......chudego......szukasz dalej.....dalej......znajdujesz coś co w dotyku przypomina latarke.........zapalasz.......widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka.........tutaj jest pełno szkieletów.......wszytkie to dzieci.........słyszysz gdzieś ryki potwora........pamiętasz........złapało coś cie na ulicy kiedy wracałeś.....ale skąd?........jedno jest pewne........MUSISZ UCIEKAĆ");
-        System.out.println("Dobiegasz do pierwszego rozwidlenia widzisz drzwi, 2 pary drzwi");
+        System.out.println("Dobiegasz do pierwszego rozwidlenia. Widzisz drzwi, 2 pary drzwi");
         System.out.println("Gdy powstał świat,\nja już tam byłam,\ngdy ewolucja postępowała,\nja już tam byłam,\nwszystkie wojny,\nprzetrwałam,\nmój wiek jest tajemnicą,\ndumnie zasiadam w królestwie herbaty,\ncały świat jest mi poddany,\nkim jestem?");
+        System.out.println("Które drzwi wybierasz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1 -> this.przejsciePrzezDrzwi = false;
@@ -62,16 +63,16 @@ public class rooms {
     }
 
     public void room2() {
-        System.out.println("Udało sie,dałeś rade,przpominasz sobie że wracałeś z pizzeri.......ale dokąd?........którędy?....nie masz czasu sie zastanawiać,słyszysz za sobą ryki potwora........");
+        System.out.println("Udało sie, dałeś rade, przypominasz sobie, że wracałeś z pizzeri.......ale dokąd?........którędy?....nie masz czasu sie zastanawiać, słyszysz za sobą ryki potwora........");
         System.out.println("Biegniesz......coraz więcej zakrętów........ryki ucichły nieco....masz troche czasu....... dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz drzwi, 3 pary, na każdych jest nazwisko:");
         System.out.println("[1] - Krzysztof Krawczyk\n[2] - Zbigniew Wodecki\n[3] - Kamil Bednarek");
         System.out.println("Nad drzwiami zaś widzisz pytanie \"Me życie to bajka,w której gram role grajka,nie obchodzi mnie rasa,religia czy pejs, ja po prostu chce popłynąć statkiem w piękny rejs,kim jestem?\"");
+        System.out.println("Które drzwi wybierasz?");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1 -> this.przejsciePrzezDrzwi = true;
-            case 2 -> this.przejsciePrzezDrzwi = false;
-            case 3 -> this.przejsciePrzezDrzwi = false;
+            case 2,3 -> this.przejsciePrzezDrzwi = false;
         }
 
         this.przejscie(this.przejsciePrzezDrzwi);
@@ -79,29 +80,27 @@ public class rooms {
     }
 
     public void room3() {
-        System.out.println("Pamiętasz....kolejny szczegół.....byłeś......jesteś uczniem....7 klasa.....prawdopodobnie......ale co tu robisz?....jak sie tu znalazłeś?........kolejne drzwi....gdzie ty jesteś co?.....(");
-        System.out.println("Widzisz 3 guziki: puszka, butelka, telewizor, nad nimi zaś zagadka");
+        String[] answers = {"puszka", "butelka", "telewizor"};
+        System.out.println("Pamiętasz....kolejny szczegół.....byłeś......jesteś uczniem....7 klasa.....prawdopodobnie......ale co tu robisz?....jak sie tu znalazłeś?........kolejne drzwi....gdzie ty jesteś.......co?.....(");
+        System.out.println("Widzisz 3 guziki: " + answers[0] + ", " + answers[1] + ", " + answers[2] + ".\nNad przyciskami wisi zagadka.");
         String odp;
-        boolean isCorrect = true;
-
-        while (isCorrect == true) {
-            System.out.println("Na fotelu siedze ja,czasem tu są niezłe jaja,siedze tutaj cały dzień co oglądam proszę ja cie?");
+            System.out.println("\"Na fotelu siedze ja,\nczasem tu są niezłe jaja,\nsiedze tutaj cały dzień,\nco oglądam proszę ja cie?\"");
             odp = scanner.next();
-            if (odp.equals("telewizor")) {
-                System.out.println("Siedze dalej, pudło gra,może wypić coś się da? Sam ja jestem proszę ciebie,cóż ja wypić mogę w tym niebie?");
+            if (odp.equals(answers[2])) { //zamieniłem zwykłe odpowiedzi na tablice
+                System.out.println("\"Siedze dalej,\npudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
                 odp = scanner.next();
-                if (odp.equals("puszka")) {
-                    System.out.println("Przyszedł boczek, przyszła i menda, jak powita gości zrzęda?");
+                if (odp.equals(answers[0])) {
+                    System.out.println("\"Przyszedł boczek, przyszła i menda,\njak powita gości zrzęda?\"");
                     odp = scanner.next();
-                    if (odp.equals("butelka")) {
-                        System.out.println("Jam jest Ferdynand Kiepski,bestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi, ostrzegam tego co to czyta aby uciekał czem prędzej przez 3 drzwi  ");
-                        isCorrect = false;
+                    if (odp.equals(answers[1])) {
+                        System.out.println("Jam jest Ferdynand Kiepski,\nbestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi,\nostrzegam tego co to czyta aby uciekał czem prędzej przez trzecie drzwi!");
+                        przejsciePrzezDrzwi = true;
                     } else {
-                        break;
+                        System.out.println("Nie potrafisz rozwiązać zagadki, słysząc bestie coraz bliżej w panice wchodzisz w którekolwiek drzwi z nadzieją że to te dobre ");
+                        przejsciePrzezDrzwi = false;
                     }
                 }
             }
-        }
         this.przejscie(this.przejsciePrzezDrzwi);
         this.room4();
 
