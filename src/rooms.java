@@ -3,10 +3,12 @@
 // (powered by FernFlower decompiler)
 //
 
+import java.awt.desktop.ScreenSleepEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class rooms {
     Scanner scanner;
@@ -112,8 +114,7 @@ public class rooms {
         System.out.println("qij T një R nënës Z nënës E qij qij një esbek ndyrë pështy C një lavire në fytyrë,I në mbrëmje, në mëngjes derisa qij është i vdekur E harruar");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
-            case 1 -> this.przejsciePrzezDrzwi = false;
-            case 2 -> this.przejsciePrzezDrzwi = false;
+            case 1, 2 -> this.przejsciePrzezDrzwi = false;
             case 3 -> this.przejsciePrzezDrzwi = true;
             default -> System.out.println("Cholera trudne to było co? Może tak może nie,nie mnie oceniać,ja tu tylko jestem narratorem,BIEGNIJ CHŁOPCZE BIEGNIJ HAHAHAHHA (o ╹‿ ╹ o)");
         }
@@ -143,7 +144,7 @@ public class rooms {
         switch (this.drzwi) {
             case 1 -> {
                 this.przejsciePrzezDrzwi = false;
-                System.out.println("preszukujesz łóżko, znajdujesz dziwny kielich,cały ze złota wysadzany po bokach czerwonymi klejnotami widzisz że dziwna ciecz wypełnia go po brzegi, nagle usłyszałeś ciche sapanie widzisz w futrynie drzwi przerażającą sylwetke bestii, widzisz jej zdeformowane ramiona z wybrzuszeniami, długie pazury oraz wykrzywione ze starości plecy, na oko ma 2,5 metra wzrostu, możesz zaobserwować że jakaś ciecz kapie na podłoge,nie wiesz dlaczego ale masz wielką nadzieje że to jednak ślina, nagle usłyszałeś jak w podłodze otworzyła sie klapa, niewiele myśląc wskakujesz do niej i nie wiesz w jaki sposób ale stoisz przed kolejną zagadką ");
+                System.out.println("przeszukujesz łóżko, znajdujesz dziwny kielich,cały ze złota wysadzany po bokach czerwonymi klejnotami widzisz że dziwna ciecz wypełnia go po brzegi, nagle usłyszałeś ciche sapanie widzisz w futrynie drzwi przerażającą sylwetke bestii, widzisz jej zdeformowane ramiona z wybrzuszeniami, długie pazury oraz wykrzywione ze starości plecy, na oko ma 2,5 metra wzrostu, możesz zaobserwować że jakaś ciecz kapie na podłoge,nie wiesz dlaczego ale masz wielką nadzieje że to jednak ślina, nagle usłyszałeś jak w podłodze otworzyła sie klapa, niewiele myśląc wskakujesz do niej i nie wiesz w jaki sposób ale stoisz przed kolejną zagadką ");
             }
             case 2 -> {
                 this.przejsciePrzezDrzwi = true;
@@ -160,8 +161,7 @@ public class rooms {
         System.out.println("Przed sobą widzisz trzy pary drzwi na których widnieją napisy: na 1 drzwiach ,,z warkoczykami”,na drugich,,obie”,zaś na trzecich,,bez warkoczyków”,gdy spoglądasz w górę widzisz jak w miejscu zagadki tworzą się litery z ognia piekielnego i tworzą napis,,jakie bestia lubi dziewczynki?”");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
-            case 1 -> this.przejsciePrzezDrzwi = false;
-            case 2 -> this.przejsciePrzezDrzwi = false;
+            case 1, 2 -> this.przejsciePrzezDrzwi = false;
             case 3 -> this.przejsciePrzezDrzwi = true;
             default -> System.out.println("Już wiesz co? Nawet na pewno,ale coż pewności nie ma,hehe,powodzenia może dożyjesz jutra\n" + "(o ╹‿ ╹ o)\n");
         }
@@ -174,9 +174,7 @@ public class rooms {
         System.out.println("przed sobą widzisz drzwi z numeracją od 1 do 4 postawione obok siebie zaś na środku korytarza stoi tabliczka na której jest napisane,, w którym filmie shreka główny bohater podpisuje cyrograf?” ");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
-            case 1 -> this.przejsciePrzezDrzwi = false;
-            case 2 -> this.przejsciePrzezDrzwi = false;
-            case 3 -> this.przejsciePrzezDrzwi = false;
+            case 1, 2, 3 -> this.przejsciePrzezDrzwi = false;
             case 4 -> this.przejsciePrzezDrzwi = true;
         }
         this.przejscie(this.przejsciePrzezDrzwi);
@@ -189,8 +187,7 @@ public class rooms {
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1 -> this.przejsciePrzezDrzwi = true;
-            case 2 -> this.przejsciePrzezDrzwi = false;
-            case 3 -> this.przejsciePrzezDrzwi = false;
+            case 2, 3 -> this.przejsciePrzezDrzwi = false;
         }
         this.przejscie(this.przejsciePrzezDrzwi);
         this.room10();
@@ -215,8 +212,7 @@ public class rooms {
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
             case 1 -> this.przejsciePrzezDrzwi = true;
-            case 2 -> this.przejsciePrzezDrzwi = false;
-            case 3 -> this.przejsciePrzezDrzwi = false;
+            case 2, 3 -> this.przejsciePrzezDrzwi = false;
         }
         this.przejscie(this.przejsciePrzezDrzwi);
         this.room12();
@@ -264,8 +260,7 @@ public class rooms {
         System.out.println("3 pary…drzwi….nie….masz….już siły…na drzwiach widnieją…..numery:4,3,5…. Nad nimi zaś…pytanie….,,Najlepsza część ,,Heroes Might and Magic”");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
-            case 1 -> this.przejsciePrzezDrzwi = false;
-            case 2 -> this.przejsciePrzezDrzwi = false;
+            case 1, 2 -> this.przejsciePrzezDrzwi = false;
             case 3 -> this.przejsciePrzezDrzwi = true;
         }
         this.przejscie(this.przejsciePrzezDrzwi);
@@ -296,9 +291,7 @@ public class rooms {
                 ",, pazzo dietro la terza porta, ma rilassati, non sarai ancora in grado di sfuggire alla bestia\n");
         this.drzwi = this.scanner.nextInt();
         switch (this.drzwi) {
-            case 1 -> this.przejsciePrzezDrzwi = true;
-            case 2 -> this.przejsciePrzezDrzwi = true;
-            case 3 -> this.przejsciePrzezDrzwi = true;
+            case 1, 2, 3 -> this.przejsciePrzezDrzwi = true;
 
         }
         System.out.println("Powodzenia dzieciaku (o ╹‿ ╹ o)");
