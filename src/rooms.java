@@ -31,11 +31,18 @@ public class rooms {
             System.out.println("Nie udaje ci się...");
             gameover();
             System.out.println("\n\n");
+            przejsciePrzezDrzwi = false;
+            drzwi = 0;
             room1();
         }
 
         przejsciePrzezDrzwi = false;
         drzwi = 0;
+    }
+
+    public void switchDefault(){
+        System.out.println("Panikujesz, nie wiesz co robisz, nie wiesz co się dzieje. Nagle na podjęcie decyzji jest już za późno, słyszysz bestie tuż za plecami...");
+        room1();
     }
 
     public void gameover() {
@@ -60,7 +67,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> System.out.println("???jakiś error żeby wyjebało");
+            default -> switchDefault();
         }
 
         przejscie(przejsciePrzezDrzwi);
@@ -78,6 +85,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2,3 -> przejsciePrzezDrzwi = false;
+            default -> switchDefault();
         }
 
         przejscie(przejsciePrzezDrzwi);
@@ -120,9 +128,10 @@ public class rooms {
         switch (drzwi) {
             case 1, 2 -> przejsciePrzezDrzwi = false;
             case 3 -> przejsciePrzezDrzwi = true;
-            default -> System.out.println("Cholera trudne to było co? Może tak może nie,nie mnie oceniać,ja tu tylko jestem narratorem,BIEGNIJ CHŁOPCZE BIEGNIJ HAHAHAHHA (o ╹‿ ╹ o)");
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
+        System.out.println("*Cholera, trudne to było co? Może tak, może nie - nie mnie to oceniać, ja tu tylko jestem narratorem, BIEGNIJ CHŁOPCZE, BIEGNIJ!*");
         room5();
     }
 
@@ -141,9 +150,10 @@ public class rooms {
         switch (drzwi) {
             case 0, 2, 3, 4 -> przejsciePrzezDrzwi = false;
             case 1 -> przejsciePrzezDrzwi = true;
-            default -> System.out.println("Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś HAHAHAHAHHAAHA (o ╹‿ ╹ o)");
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
+        System.out.println("*Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś, HAHAHA!*");
         room6();
     }
 
@@ -160,6 +170,7 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
+            default -> switchDefault();
         }
         room7();
     }
@@ -172,9 +183,10 @@ public class rooms {
         switch (drzwi) {
             case 1, 2 -> przejsciePrzezDrzwi = false;
             case 3 -> przejsciePrzezDrzwi = true;
-            default -> System.out.println("Już wiesz co? Nawet na pewno,ale coż pewności nie ma,hehe,powodzenia może dożyjesz jutra\n" + "(o ╹‿ ╹ o)\n");
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
+        System.out.println("*Już wiesz, co? Nawet na pewno, ale coż, pewności nie ma, hehe. Powodzenia, może dożyjesz jutra!*");
         room8();
     }
 
@@ -185,6 +197,7 @@ public class rooms {
         switch (drzwi) {
             case 1, 2, 3 -> przejsciePrzezDrzwi = false;
             case 4 -> przejsciePrzezDrzwi = true;
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
         room9();
@@ -198,6 +211,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
         room10();
@@ -211,9 +225,10 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> System.out.println("Tchórzysz? Czy może ciągle się odradzasz? Co za różnica I TAK W KOŃCU UMRZESZ (o ╹‿ ╹ o)");
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
+        System.out.println("*Tchórzysz? Czy może już tu byłeś i wiesz jak wygląda rozwiązanie? To bez znaczenia, i tak UMRZESZ!*"); //zmieniłem trochę tekst System.out.println("Tchórzysz? Czy może ciągle się odradzasz? Co za różnica I TAK W KOŃCU UMRZESZ (o ╹‿ ╹ o)");
         room11();
     }
 
@@ -225,6 +240,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
         room12();
@@ -243,6 +259,7 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
+            default -> switchDefault();
         }
         room13();
     }
@@ -265,11 +282,13 @@ public class rooms {
                         przejsciePrzezDrzwi = true;
                         System.out.println("Zdecydowałeś się przejść przez okno. Przeczołgujesz się przez ciasny korytarz w nadziei, że był to dobry wybór...");
                     }
+                    default -> switchDefault();
                 }
             }
-            default -> System.out.println("Nieźle nieźle,coraz bliżej końca prawda?ciesz się póki możesz ON JUŻ JEST CORAZ BLIŻEJ HAHAHAHA (o ╹‿ ╹ o)");
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
+        System.out.println("*Nieźle, nieźle, coraz bliżej końca. Ciesz się póki możesz, ON JUŻ JEST CORAZ BLIŻEJ HAHAHA!*");
         room14();
 
     }
@@ -282,6 +301,7 @@ public class rooms {
         switch (drzwi) {
             case 1, 3 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
         room15();
@@ -299,6 +319,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
+            default -> switchDefault();
         }
         przejscie(przejsciePrzezDrzwi);
         room16();
@@ -309,21 +330,17 @@ public class rooms {
         System.out.println("Stoisz przed trzema pięknie wykończonymi parami drzwi. Czujesz że to już ostatnie przejście, ostatnie drzwi... niestety nie umiesz rozczytać zagadki, jest w niezrozumiałym dla ciebie języku... po włosku? Patrzysz na nią i próbujesz przeczytać:\n\"Pazzo dietro la terza porta, ma rilassati, non sarai ancora in grado di sfuggire alla bestia\"");
         System.out.println("Nie masz zielonego pojęcia jak zagadka ma ci pomóc w wyborze drzwi, jednak musisz podjąć szybko decyzję... przez które drzwi przechodzisz? [1-3]");
         drzwi = scanner.nextInt();
-        switch (drzwi) {
-            case 1, 2, 3 -> przejsciePrzezDrzwi = true;
-
-        }
-        System.out.println("Powodzenia dzieciaku (o ╹‿ ╹ o)");
+        System.out.println("*Powodzenia dzieciaku...*");
         ending();
     }
 
     public void ending() {
         if(artefakt = true){
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
-            System.out.println("GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
+            System.out.println("*GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!*\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
         }if(artefakt = false){
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie, już nie uciekasz, boisz się, bestia jednym ruchem łapy urywa ci ręke, padasz, krwawisz, bestia podchodzi, jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
-            System.out.println("Hahahah głupcze, od teraz należysz do mnie!");
+            System.out.println("*Hahahah głupcze, od teraz należysz do mnie!*");
             System.out.println("Czujesz, jak twoja dusza przepada...");
         }
         System.out.println("\n\n");
