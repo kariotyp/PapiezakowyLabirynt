@@ -17,6 +17,7 @@ public class rooms {
     Random random;
     int drzwi;
     boolean przejsciePrzezDrzwi;
+    boolean artefakt = false;
 
     public rooms() {
         scanner = new Scanner(System.in);
@@ -129,7 +130,10 @@ public class rooms {
         String[] answers = {"marchewka", "szpinak", "brokuł", "jabłko", "banan"};
         System.out.println("Pamiętasz więcej, byłeś uczniem. Jechaliście na wycieczke, pamiętasz jak poszedłeś z kolegami na pizze... oni cie zostawili?..... nie, to chyba nie to..... dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz przed sobą 5 par drzwi, na każdych jest narysowane jedzenie.");
-        for(int i = 0; i < answers.length; i++) System.out.println("[" + i+1 + "] - " + answers[i]);
+        for(int i = 0; i < answers.length; i++) {
+            int ii = i+1;
+            System.out.println("[" + ii + "] - " + answers[i]);
+        }
         System.out.println("Nad drzwiami widzisz ogniste litery które tworzą napis \"Jak mi dadzą to jem\"");
         System.out.println("Przez które drzwi przechodzisz? [1-5]");
         drzwi = scanner.nextInt();
@@ -234,7 +238,7 @@ public class rooms {
         switch (drzwi) {
             case 1 -> {
                 System.out.println("Przeszukujesz łóżko. Znajdujesz dziwny kielich, cały ze złota, wysadzany po bokach czerwonymi klejnotami.\nWidzisz że dziwna ciecz wypełnia go po brzegi. Nagle usłyszałeś ciche sapanie, widzisz w futrynie drzwi przerażającą sylwetke bestii. Widzisz jej zdeformowane ramiona z wybrzuszeniami, długie pazury oraz wykrzywione ze starości plecy, na oko ma 2,5 metra wzrostu.\nMożesz zaobserwować, że jakaś ciecz kapie na podłoge. Nie wiesz dlaczego, ale masz wielką nadzieje że to jednak ślina.\nNagle usłyszałeś jak w podłodze otworzyła sie klapa, niewiele myśląc wskakujesz do niej i znajdujesz się w innym pomieszczeniu. Uciekasz dalej");
-                //coś z artefaktem
+                artefakt = true;
             }
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
@@ -252,7 +256,16 @@ public class rooms {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> {
                 przejsciePrzezDrzwi = true;
-                System.out.println("Znalazłeś małe okienko, przeczołgujesz się przez nie...");
+                System.out.println("Rozglądając się po pomieszczeniu widzisz... okno. Małe okienko, zmieściłbyś sie w nie...");
+                System.out.println("[1] - Wybierasz drzwi\n[2] - Wybierasz okno");
+                drzwi = scanner.nextInt();
+                switch (drzwi) {
+                    case 1 -> przejsciePrzezDrzwi = false;
+                    case 2 -> {
+                        przejsciePrzezDrzwi = true;
+                        System.out.println("Zdecydowałeś się przejść przez okno. Przeczołgujesz się przez ciasny korytarz w nadziei, że był to dobry wybór...");
+                    }
+                }
             }
             default -> System.out.println("Nieźle nieźle,coraz bliżej końca prawda?ciesz się póki możesz ON JUŻ JEST CORAZ BLIŻEJ HAHAHAHA (o ╹‿ ╹ o)");
         }
@@ -267,8 +280,8 @@ public class rooms {
         System.out.println("Przez które... drzwi... prze-przechodzisz [1-3]");
         drzwi = scanner.nextInt();
         switch (drzwi) {
-            case 1, 2 -> przejsciePrzezDrzwi = false;
-            case 3 -> przejsciePrzezDrzwi = true;
+            case 1, 3 -> przejsciePrzezDrzwi = false;
+            case 2 -> przejsciePrzezDrzwi = true;
         }
         przejscie(przejsciePrzezDrzwi);
         room15();
@@ -280,7 +293,7 @@ public class rooms {
         System.out.println("Biegniesz dalej, pamiętasz już wszystko. Poszedłeś z kolegami na pizze po całym dniu zwiedzania Rzymu. Ten kultysta, który dosiadł się do was na granicy to zaproponował, wtedy kiedy poszedłeś do łazienki zamordował twoich przyjaciół, gdy uciekałeś do hotelu wpadłeś na to coś, bestia cie porwała, wyglądała znajomo, a więc to miejsce...");
         System.out.println("*Przyjacielu... pozwól, że wyjaśnie dlaczego wciąż żyjesz - jestem tym, którego zwą wiecznym złem. Nie pozwoliłbym ci umrzeć w spokoju, dlatego ciągle się odradzasz (o ╹‿ ╹ o)");
         System.out.println("Wystraszony biegniesz dalej, masz dość tego głosu który mówi przez ściany, dobiegasz do kolejnego rozwidlenia/");
-        System.out.println("Stoisz przed dwiema para drzwi, na których po kolei widnieją napisy: [1] - \"Zbigniew Stonoga\"\n[2] - \"Zbigniew Ziobro\"\nNad drzwiami widzisz pytanie:\n\"Który prześladuje rodzine drugiego? Wybierz mądrze, już prawie jesteś na miejscu\"");
+        System.out.println("Stoisz przed dwiema para drzwi, na których po kolei widnieją napisy:\n[1] - \"Zbigniew Stonoga\"\n[2] - \"Zbigniew Ziobro\"\nNad drzwiami widzisz pytanie:\n\"Który prześladuje rodzine drugiego? Wybierz mądrze, już prawie jesteś na miejscu\"");
         System.out.println("Przez które drzwi przechodzisz? [1-2]");
         drzwi = scanner.nextInt();
         switch (drzwi) {
@@ -301,5 +314,19 @@ public class rooms {
 
         }
         System.out.println("Powodzenia dzieciaku (o ╹‿ ╹ o)");
+        ending();
+    }
+
+    public void ending() {
+        if(artefakt = true){
+            System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
+            System.out.println("GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
+        }if(artefakt = false){
+            System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie, już nie uciekasz, boisz się, bestia jednym ruchem łapy urywa ci ręke, padasz, krwawisz, bestia podchodzi, jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
+            System.out.println("Hahahah głupcze, od teraz należysz do mnie!");
+            System.out.println("Czujesz, jak twoja dusza przepada...");
+        }
+        System.out.println("\n\n");
+        System.out.println("Autorzy:\nKonrad Kowalski\nBartosz Kijak\nOskar Malec");
     }
 }
