@@ -31,17 +31,23 @@ public class rooms {
             Thread.sleep(5000L);
             System.out.println("\n\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.room1();
         }
 
         this.przejsciePrzezDrzwi = false;
         this.drzwi = 0;
 =======
+=======
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
             room1();
         }
 
         przejsciePrzezDrzwi = false;
         drzwi = 0;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
     }
 
@@ -80,6 +86,9 @@ public class rooms {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
             default -> System.out.println("???jakiś error żeby wyjebało");
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -108,6 +117,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2,3 -> przejsciePrzezDrzwi = false;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -244,6 +256,7 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
+<<<<<<< HEAD
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -266,6 +279,8 @@ public class rooms {
                 break;
             default:
                 System.out.println("Już wiesz co? Nawet na pewno,ale coż pewności nie ma,hehe,powodzenia może dożyjesz jutra\n(o ╹‿ ╹ o)\n");
+=======
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
         this.przejscie(this.przejsciePrzezDrzwi);
@@ -306,6 +321,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 2, 3 -> przejsciePrzezDrzwi = false;
             case 4 -> przejsciePrzezDrzwi = true;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -334,6 +352,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -395,6 +416,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -429,6 +453,9 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -505,6 +532,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 3 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
@@ -540,6 +570,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
+<<<<<<< HEAD
+>>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
+=======
 >>>>>>> parent of 0e93e56... update rooms (jeszcze try catch)
         }
 
