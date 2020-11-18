@@ -8,22 +8,21 @@ import com.sun.jdi.InconsistentDebugInfoException;
 import java.awt.desktop.ScreenSleepEvent;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class rooms {
+public class rooms extends functions {
     Scanner scanner;
-    Random random;
-    int drzwi;
-    boolean przejsciePrzezDrzwi;
-    boolean artefakt = false;
-    functions Functions = new functions();
+
+    public rooms(int drzwi, boolean przejsciePrzezDrzwi, boolean artefakt) {
+        super(drzwi, przejsciePrzezDrzwi, artefakt);
+        scanner = new Scanner(System.in);
+    }
 
     public rooms() {
         scanner = new Scanner(System.in);
-        random = new Random();
     }
+
 
     public void room1() {
         System.out.println("Budzisz sie.... nie wiesz gdzie jesteś...... jest ciemno.... mokro..... i śmierdzi kremówką....... szukasz po omacku czegokolwiek co mogłoby pomóc.... łapiesz coś podłóżnego....... chudego...... szukasz dalej..... dalej...... znajdujesz coś co w dotyku przypomina latarke......... zapalasz....... widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka......... tutaj jest pełno szkieletów....... wszytkie to dzieci......... słyszysz gdzieś ryki potwora........ pamiętasz........ złapało coś cie na ulicy kiedy wracałeś..... ale skąd?........ jedno jest pewne........ MUSISZ UCIEKAĆ");
@@ -32,17 +31,17 @@ public class rooms {
         System.out.println("Które drzwi wybierasz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi");
         try {
             drzwi = scanner.nextInt();
-        }catch(Exception exception){
-        scanner.next();
-        Functions.wrongDoorsValue();
+        } catch (Exception exception) {
+            scanner.nextInt();
+            wrongDoorsValue();
         }
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
 
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room2();
     }
 
@@ -56,11 +55,11 @@ public class rooms {
         drzwi = scanner.nextInt();
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
-            case 2,3 -> przejsciePrzezDrzwi = false;
-            default -> Functions.wrongDoorsValue();
+            case 2, 3 -> przejsciePrzezDrzwi = false;
+            default -> wrongDoorsValue();
         }
 
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room3();
     }
 
@@ -69,24 +68,24 @@ public class rooms {
         System.out.println("Pamiętasz.... kolejny szczegół..... byłeś...... nie, jesteś uczniem.... 7 klasa..... prawdopodobnie...... ale co tu robisz?.... jak sie tu znalazłeś?........ kolejne drzwi.... gdzie ty jesteś....... co?.....");
         System.out.println("Widzisz 3 guziki: " + answers[0] + ", " + answers[1] + ", " + answers[2] + ".\nNad przyciskami wisi zagadka.");
         String odp;
-            System.out.println("\"Na fotelu siedze ja,\nczasem tu są niezłe jaja,\nsiedze tutaj cały dzień,\nco oglądam proszę ja cie?\"");
+        System.out.println("\"Na fotelu siedze ja,\nczasem tu są niezłe jaja,\nsiedze tutaj cały dzień,\nco oglądam proszę ja cie?\"");
+        odp = scanner.next();
+        if (odp.equals(answers[2])) { //zamieniłem zwykłe odpowiedzi na tablice
+            System.out.println("\"Siedze dalej, pudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
             odp = scanner.next();
-            if (odp.equals(answers[2])) { //zamieniłem zwykłe odpowiedzi na tablice
-                System.out.println("\"Siedze dalej, pudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
+            if (odp.equals(answers[0])) {
+                System.out.println("\"Przyszedł boczek, przyszła i menda,\njak powita gości zrzęda?\"");
                 odp = scanner.next();
-                if (odp.equals(answers[0])) {
-                    System.out.println("\"Przyszedł boczek, przyszła i menda,\njak powita gości zrzęda?\"");
-                    odp = scanner.next();
-                    if (odp.equals(answers[1])) {
-                        System.out.println("Jam jest Ferdynand Kiepski,\nbestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi,\nostrzegam tego co to czyta aby uciekał czem prędzej przez trzecie drzwi!");
-                        przejsciePrzezDrzwi = true;
-                    } else {
-                        System.out.println("Nie potrafisz rozwiązać zagadki, słysząc bestie coraz bliżej w panice przechodzisz przez którekolwiek drzwi z nadzieją że to te dobre ");
-                        przejsciePrzezDrzwi = false;
-                    }
+                if (odp.equals(answers[1])) {
+                    System.out.println("Jam jest Ferdynand Kiepski,\nbestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi,\nostrzegam tego co to czyta aby uciekał czem prędzej przez trzecie drzwi!");
+                    przejsciePrzezDrzwi = true;
+                } else {
+                    System.out.println("Nie potrafisz rozwiązać zagadki, słysząc bestie coraz bliżej w panice przechodzisz przez którekolwiek drzwi z nadzieją że to te dobre ");
+                    przejsciePrzezDrzwi = false;
                 }
             }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        }
+        przejscie(przejsciePrzezDrzwi);
         room4();
     }
 
@@ -98,9 +97,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 2 -> przejsciePrzezDrzwi = false;
             case 3 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         System.out.println("*Cholera, trudne to było co? Może tak, może nie - nie mnie to oceniać, ja tu tylko jestem narratorem, BIEGNIJ CHŁOPCZE, BIEGNIJ!*");
         room5();
     }
@@ -109,8 +108,8 @@ public class rooms {
         String[] answers = {"marchewka", "szpinak", "brokuł", "jabłko", "banan"};
         System.out.println("Pamiętasz więcej, byłeś uczniem. Jechaliście na wycieczke, pamiętasz jak poszedłeś z kolegami na pizze... oni cie zostawili?..... nie, to chyba nie to..... dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz przed sobą 5 par drzwi, na każdych jest narysowane jedzenie.");
-        for(int i = 0; i < answers.length; i++) {
-            int ii = i+1;
+        for (int i = 0; i < answers.length; i++) {
+            int ii = i + 1;
             System.out.println("[" + ii + "] - " + answers[i]);
         }
         System.out.println("Nad drzwiami widzisz ogniste litery które tworzą napis \"Jak mi dadzą to jem\"");
@@ -120,9 +119,9 @@ public class rooms {
         switch (drzwi) {
             case 0, 2, 3, 4 -> przejsciePrzezDrzwi = false;
             case 1 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         System.out.println("*Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś, HAHAHA!*");
         room6();
     }
@@ -140,7 +139,7 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
         room7();
     }
@@ -153,9 +152,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 2 -> przejsciePrzezDrzwi = false;
             case 3 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         System.out.println("*Już wiesz, co? Nawet na pewno, ale coż, pewności nie ma, hehe. Powodzenia, może dożyjesz jutra!*");
         room8();
     }
@@ -167,9 +166,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 2, 3 -> przejsciePrzezDrzwi = false;
             case 4 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room9();
     }
 
@@ -181,9 +180,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room10();
     }
 
@@ -195,9 +194,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         System.out.println("*Tchórzysz? Czy może już tu byłeś i wiesz jak wygląda rozwiązanie? To bez znaczenia, i tak UMRZESZ!*"); //zmieniłem trochę tekst System.out.println("Tchórzysz? Czy może ciągle się odradzasz? Co za różnica I TAK W KOŃCU UMRZESZ (o ╹‿ ╹ o)");
         room11();
     }
@@ -210,9 +209,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = true;
             case 2, 3 -> przejsciePrzezDrzwi = false;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room12();
     }
 
@@ -229,7 +228,7 @@ public class rooms {
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
             }
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
         room13();
     }
@@ -252,12 +251,12 @@ public class rooms {
                         przejsciePrzezDrzwi = true;
                         System.out.println("Zdecydowałeś się przejść przez okno. Przeczołgujesz się przez ciasny korytarz w nadziei, że był to dobry wybór...");
                     }
-                    default -> Functions.wrongDoorsValue();
+                    default -> wrongDoorsValue();
                 }
             }
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         System.out.println("*Nieźle, nieźle, coraz bliżej końca. Ciesz się póki możesz, ON JUŻ JEST CORAZ BLIŻEJ HAHAHA!*");
         room14();
 
@@ -271,9 +270,9 @@ public class rooms {
         switch (drzwi) {
             case 1, 3 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room15();
     }
 
@@ -289,9 +288,9 @@ public class rooms {
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> przejsciePrzezDrzwi = true;
-            default -> Functions.wrongDoorsValue();
+            default -> wrongDoorsValue();
         }
-        Functions.przejscie(przejsciePrzezDrzwi);
+        przejscie(przejsciePrzezDrzwi);
         room16();
     }
 
@@ -305,10 +304,11 @@ public class rooms {
     }
 
     public void ending() {
-        if(artefakt = true){
+        if (artefakt = true) {
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
             System.out.println("GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
-        }if(artefakt = false){
+        }
+        if (artefakt = false) {
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie, już nie uciekasz, boisz się, bestia jednym ruchem łapy urywa ci ręke, padasz, krwawisz, bestia podchodzi, jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
             System.out.println("Hahahah głupcze, od teraz należysz do mnie!");
             System.out.println("Czujesz, jak twoja dusza przepada...");
@@ -316,31 +316,5 @@ public class rooms {
         System.out.println("\n\n");
         System.out.println("Autorzy:\nKonrad Kowalski\nBartosz Kijak\nOskar Malec");
     }
-
-    //gettery i settery
-    public int getDrzwi() {
-        return drzwi;
-    }
-
-    public void setDrzwi(int drzwi) {
-        this.drzwi = drzwi;
-    }
-
-    public boolean isPrzejsciePrzezDrzwi() {
-        return przejsciePrzezDrzwi;
-    }
-
-    public void setPrzejsciePrzezDrzwi(boolean przejsciePrzezDrzwi) {
-        this.przejsciePrzezDrzwi = przejsciePrzezDrzwi;
-    }
-
-    public boolean isArtefakt() {
-        return artefakt;
-    }
-
-    public void setArtefakt(boolean artefakt) {
-        this.artefakt = artefakt;
-    }
-
 }
 

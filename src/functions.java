@@ -1,13 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
-public class functions {
-
-    Scanner scanner;
+public class functions{
     Random random;
-    rooms Rooms = new rooms();
+    int drzwi;
+    boolean przejsciePrzezDrzwi;
+    boolean artefakt = false;
+
+    public functions(int drzwi, boolean przejsciePrzezDrzwi, boolean artefakt) {
+    }
+    public functions() {
+
+    }
+
+    public void room1() {
+
+    }
 
     public void przejscie(boolean czyPrzeszlo) {
         if (czyPrzeszlo) {
@@ -16,7 +25,7 @@ public class functions {
             System.out.println("Nie udaje ci się...");
             gameover();
             System.out.println("\n\n");
-            Rooms.room1();
+            room1();
         }
 
         zeruj();
@@ -51,10 +60,37 @@ public class functions {
     public void wrongDoorsValue(){
         System.out.println("Panikujesz, nie wiesz co robisz, nie wiesz co się dzieje. Nagle na podjęcie decyzji jest już za późno, słyszysz bestie tuż za plecami...");
         zeruj();
-        Rooms.room1();
+        room1();
     }
+
     public void zeruj() {
-        Rooms.setPrzejsciePrzezDrzwi(false);
-        Rooms.setDrzwi(0);
+        setPrzejsciePrzezDrzwi(false);
+        setDrzwi(0);
+    }
+
+    //gettery i settery
+
+    public int getDrzwi() {
+        return drzwi;
+    }
+
+    public void setDrzwi(int drzwi) {
+        this.drzwi = drzwi;
+    }
+
+    public boolean isPrzejsciePrzezDrzwi() {
+        return przejsciePrzezDrzwi;
+    }
+
+    public void setPrzejsciePrzezDrzwi(boolean przejsciePrzezDrzwi) {
+        this.przejsciePrzezDrzwi = przejsciePrzezDrzwi;
+    }
+
+    public boolean isArtefakt() {
+        return artefakt;
+    }
+
+    public void setArtefakt(boolean artefakt) {
+        this.artefakt = artefakt;
     }
 }
