@@ -24,7 +24,21 @@ public class rooms {
         random = new Random();
     }
 
+    public void animation() {
+        System.out.println();
+        for (int i = 0; i < 10; ++i) {
+            System.out.print("⚫");
+            try {
+                Thread.sleep(200L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println();
+    }
+
     public void przejscie(boolean czyPrzeszlo) {
+        animation();
         if (czyPrzeszlo) {
             System.out.println("Udaje ci się przejść do następnego pokoju...");
         } else {
@@ -329,4 +343,6 @@ public class rooms {
         System.out.println("\n\n");
         System.out.println("Autorzy:\nKonrad Kowalski\nBartosz Kijak\nOskar Malec");
     }
+
 }
+
