@@ -3,12 +3,10 @@
 // (powered by FernFlower decompiler)
 //
 
-import java.awt.desktop.ScreenSleepEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class rooms {
     Scanner scanner;
@@ -21,12 +19,16 @@ public class rooms {
         this.random = new Random();
     }
 
-    public void przejscie(boolean czyPrzeszlo) {
+    public void przejscie(boolean czyPrzeszlo) throws InterruptedException {
         if (czyPrzeszlo) {
+            animation();
             System.out.println("Udaje ci się przejść do następnego pokoju...");
+            System.out.println();
         } else {
+            animation();
             System.out.println("Nie udaje ci się...");
             this.gameover();
+            Thread.sleep(5000);
             System.out.println("\n\n");
             this.room1();
         }
@@ -48,7 +50,7 @@ public class rooms {
         System.out.println((String) deaths.get(losuj));
     }
 
-    public void room1() {
+    public void room1() throws InterruptedException {
         System.out.println("Budzisz sie....nie wiesz gdzie jesteś......jest ciemno....mokro.....i śmierdzi kremówką.......szukasz po omacku czegokolwiek co mogłoby pomóc....łapiesz coś podłóżnego.......chudego......szukasz dalej.....dalej......znajdujesz coś co w dotyku przypomina latarke.........zapalasz.......widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka.........tutaj jest pełno szkieletów.......wszytkie to dzieci.........słyszysz gdzieś ryki potwora........pamiętasz........złapało coś cie na ulicy kiedy wracałeś.....ale skąd?........jedno jest pewne........MUSISZ UCIEKAĆ");
         System.out.println("Dobiegasz do pierwszego rozwidlenia. Widzisz drzwi, 2 pary drzwi");
         System.out.println("Gdy powstał świat,\nja już tam byłam,\ngdy ewolucja postępowała,\nja już tam byłam,\nwszystkie wojny,\nprzetrwałam,\nmój wiek jest tajemnicą,\ndumnie zasiadam w królestwie herbaty,\ncały świat jest mi poddany,\nkim jestem?");
@@ -64,7 +66,7 @@ public class rooms {
         this.room2();
     }
 
-    public void room2() {
+    public void room2() throws InterruptedException {
         System.out.println("Udało sie, dałeś rade, przypominasz sobie, że wracałeś z pizzeri.......ale dokąd?........którędy?....nie masz czasu sie zastanawiać, słyszysz za sobą ryki potwora........");
         System.out.println("Biegniesz......coraz więcej zakrętów........ryki ucichły nieco....masz troche czasu....... dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz drzwi, 3 pary, na każdych jest nazwisko:");
@@ -81,7 +83,7 @@ public class rooms {
         this.room3();
     }
 
-    public void room3() {
+    public void room3() throws InterruptedException {
         String[] answers = {"puszka", "butelka", "telewizor"};
         System.out.println("Pamiętasz....kolejny szczegół.....byłeś......jesteś uczniem....7 klasa.....prawdopodobnie......ale co tu robisz?....jak sie tu znalazłeś?........kolejne drzwi....gdzie ty jesteś.......co?.....(");
         System.out.println("Widzisz 3 guziki: " + answers[0] + ", " + answers[1] + ", " + answers[2] + ".\nNad przyciskami wisi zagadka.");
@@ -109,7 +111,7 @@ public class rooms {
 
     }
 
-    public void room4() {
+    public void room4() throws InterruptedException {
         System.out.println("Biegniesz dalej, kolejna zagadka,kolejne rozwidlenie,zupełnie jak w tym hotelu..........w hotelu?.....\n" + "Dobiegasz do kolejnej zagadki.\n");
         System.out.println("qij T një R nënës Z nënës E qij qij një esbek ndyrë pështy C një lavire në fytyrë,I në mbrëmje, në mëngjes derisa qij është i vdekur E harruar");
         this.drzwi = this.scanner.nextInt();
@@ -122,7 +124,7 @@ public class rooms {
         this.room5();
     }
 
-    public void room5() {
+    public void room5() throws InterruptedException {
         System.out.println("Pamiętasz więcej,byłeś uczniem,jechaliście na wycieczke,pamiętasz jak poszedłeś z kolegami na pizze,oni cie zostawili?.....nie to chyba nie to.....dobiegasz do kolejnego rozwidlenia");
         System.out.println("Widzisz przed sobą 5 przycisków o kształtach od lewej: marchewka,coś na kształt szpinaku,brokuł,jabłko,banan");
         System.out.println("nad nimi widzisz jak ogniste litery tworzą napis ,,Jak mi dadzą to jem' '");
@@ -136,7 +138,7 @@ public class rooms {
         this.room6();
     }
 
-    public void room6() {
+    public void room6() throws InterruptedException{
         System.out.println("Czujesz w głębi serca że coraz bardziej bestia zbliża sie do ciebie,boisz sie jak nigdy dotąd,po ostatniej zagadce czujesz że jeśli nie wytężysz swej głowy i nie pośpieszysz sie z odpowiedziami, ZGINIESZ.");
         System.out.println("Wbiegasz do następnego pokoju widzisz przed sobą kolejne 2 pary drzwi,gdy sie rozglądasz zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz....łóżko,czujesz że bestia jest coraz bliżej musisz szybko podjąć decyzje czy przeszukać łóżko szukając czegoś użytecznego czy wbiec w któreś drzwi");
         System.out.println("[1] chowam sie" + "[2]ide dalej");
@@ -156,7 +158,7 @@ public class rooms {
         this.room7();
     }
 
-    public void room7() {
+    public void room7() throws InterruptedException{
         System.out.println("Biegniesz dalej kolejne rozwidlenie,jednak pamiętasz że ty uciekałeś już wcześniej, koledzy cie nie zostawili,zostali.......zamordowani......przez tego kultyste w pizzerii....");
         System.out.println("Przed sobą widzisz trzy pary drzwi na których widnieją napisy: na 1 drzwiach ,,z warkoczykami”,na drugich,,obie”,zaś na trzecich,,bez warkoczyków”,gdy spoglądasz w górę widzisz jak w miejscu zagadki tworzą się litery z ognia piekielnego i tworzą napis,,jakie bestia lubi dziewczynki?”");
         this.drzwi = this.scanner.nextInt();
@@ -169,7 +171,7 @@ public class rooms {
         this.room8();
     }
 
-    public void room8() {
+    public void room8() throws InterruptedException {
         System.out.println("Biegniesz dalej,kolejne wspomnienia wracają,pamiętasz tego kultyste, zabrał was na pizze po całodziennym zwiedzaniu,wasza wychowawczyni nie protestowała…..czemu?");
         System.out.println("przed sobą widzisz drzwi z numeracją od 1 do 4 postawione obok siebie zaś na środku korytarza stoi tabliczka na której jest napisane,, w którym filmie shreka główny bohater podpisuje cyrograf?” ");
         this.drzwi = this.scanner.nextInt();
@@ -181,7 +183,7 @@ public class rooms {
         this.room9();
     }
 
-    public void room9() {
+    public void room9() throws InterruptedException {
         System.out.println("Biegniesz dalej,pamiętasz że koledzy go polubili i poszli z nim na zaplecze….ty zaś do toalety….dlatego przeżyłeś");
         System.out.println("Widzisz 3 pary drzwi z na których są napisy:,,Tadeusz Sznuk”, ,,Hubert Urbański”, ,,Norbi” nad nimi zaś pytanie ,,jak nazywa się prowadzący teleturniej w którym sprzedajesz dusze za słodkie kuferki?”");
         this.drzwi = this.scanner.nextInt();
@@ -193,7 +195,7 @@ public class rooms {
         this.room10();
     }
 
-    public void room10() {
+    public void room10() throws InterruptedException {
         System.out.println("Ta miła kelnerka….powiedziała ci gdzie poszli…….z ciekawości tam zajrzałeś…..nigdy tego widoku nie wymażesz z pamięci, postanawiasz nie tracić czasu i uciekać dalej");
         System.out.println("Widzisz przed sobą 2 pary drzwi z napisami ,,tak” oraz ,,nie” wyżej zaś widnieje pytanie  ,,Pan Jezus poświęcił się za ludzkość, a czy ty jesteś dość odważny na taką ofiare?”");
         this.drzwi = this.scanner.nextInt();
@@ -206,7 +208,7 @@ public class rooms {
         this.room11();
     }
 
-    public void room11() {
+    public void room11() throws InterruptedException {
         System.out.println("Pamiętasz kolejne rzeczy,uciekłeś z pizzeri….pamiętasz krzyk tej kelnerki….biegłeś ulicą do hotelu w którym była twoja klasa…..chyba…..(");
         System.out.println("Kolejne 3 pary drzwi na których są wyryte odpowiedzi:,,9%” , ,,2137%” , ,,3%”  ,,ile procent ma beczkowane mocne wiśniowe?”");
         this.drzwi = this.scanner.nextInt();
@@ -218,7 +220,7 @@ public class rooms {
         this.room12();
     }
 
-    public void room12() {
+    public void room12() throws InterruptedException {
         System.out.println("widzisz drzwi,rozglądasz sie i widzisz że znowu jesteś w jakieś sypialni....boisz sie i widzisz łóżko,ciekawość korci cie aby je przeszukać ale rozsądek podpowiada ci że lepiej uciekać co robisz?");
         System.out.println("[1]przeszukuje" + "[2]uciekam");
         this.drzwi = this.scanner.nextInt();
@@ -236,7 +238,7 @@ public class rooms {
         this.room13();
     }
 
-    public void room13() {
+    public void room13() throws InterruptedException {
         System.out.println("Uciekałeś,krętymi uliczkami,piepszone filmy których się naoglądałeś,to tam mówili ci że to zawsze działa……..pamiętasz ten smród……..pamiętasz……nie…….nie pamiętasz….albo nie chcesz pamiętać");
         System.out.println("widzisz jedne drzwi,całe zakrwawione,widzisz że krew jest wszędzie wymieszana z kremówką,nawet z pod drzwi cieknie na górze zaś pytanie,,Idziesz dalej? HAHAHAHA”");
         System.out.println("[1] ide dalej\n" +
@@ -255,7 +257,7 @@ public class rooms {
 
     }
 
-    public void room14() {
+    public void room14() throws InterruptedException {
         System.out.println("Ta bestia.....to ona cie porwała.....jedyne co pamiętasz po spotkaniu jej to ból głowy……tylko tyle....ale to może i dobrze?.......");
         System.out.println("3 pary…drzwi….nie….masz….już siły…na drzwiach widnieją…..numery:4,3,5…. Nad nimi zaś…pytanie….,,Najlepsza część ,,Heroes Might and Magic”");
         this.drzwi = this.scanner.nextInt();
@@ -267,7 +269,7 @@ public class rooms {
         this.room15();
     }
 
-    public void room15() {
+    public void room15() throws InterruptedException {
         System.out.println("Zatrzasnąłeś drzwi,masz chwile czasu….na odpoczynek……");
         System.out.println("Czyżbyś się zmęczył mój drogi????? Te drzwi nie wytrzymają za długo (o ╹‿ ╹ o)");
         System.out.println("Biegniesz dalej,pamiętasz już wszystko,poszedłeś z kolegami na pizze po całym dniu zwiedzania Rzymu,ten kultysta który dosiadł się do was na granicy to zaproponował,wtedy kiedy poszedłeś do łazienki zamordował twoich przyjaciół,gdy uciekałeś do hotelu wpadłeś na to coś,bestia cie porwała,wyglądała znajomo,a więc to miejsce……….");
@@ -295,5 +297,15 @@ public class rooms {
 
         }
         System.out.println("Powodzenia dzieciaku (o ╹‿ ╹ o)");
+    }
+
+    public void animation() throws InterruptedException {
+        System.out.println();
+        for (int i=0;i<10;i++){
+            System.out.print("⚫");
+            Thread.sleep(225);
+        }
+        System.out.println();
+        System.out.println();
     }
 }
