@@ -19,6 +19,7 @@ public class functions{
     }
 
     public void przejscie(boolean czyPrzeszlo) {
+        animation();
         if (czyPrzeszlo) {
             System.out.println("Udaje ci się przejść do następnego pokoju...");
         } else {

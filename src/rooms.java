@@ -131,6 +131,7 @@ public class rooms extends functions {
         System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu szukając czegoś użytecznego czy uciec przez któreś drzwi");
         System.out.println("[1] - Chowam się pod łóżkiem w poszukianiu czegoś użytecznego\n[2] - Uciekam dalej");
         drzwi = scanner.nextInt();
+        animation();
         switch (drzwi) {
             case 1 -> {
                 System.out.println("Przeszukujesz łóżko. Nie znajdujesz w nim nic użytecznego, usłyszałeś kroki bestii za drzwiami. Pod wpływem strachu schowałeś sie pod łóżko. Widzisz tylko obrzydliwe nogi które mają zgniłe paznokcie, haluksy i żółty kolor wymieszany z grzybicą. Słyszysz  śmiech potwora, następnie czujesz zimną dłoń na swojej kostce, bestia łapie cie i patroszy śmiejąc sie");
@@ -220,6 +221,7 @@ public class rooms extends functions {
         System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu szukając czegoś użytecznego czy uciec przez któreś drzwi");
         System.out.println("[1] - Chowam się pod łóżkiem w poszukianiu czegoś użytecznego\n[2] - Uciekam dalej");
         drzwi = scanner.nextInt();
+        animation();
         switch (drzwi) {
             case 1 -> {
                 System.out.println("Przeszukujesz łóżko. Znajdujesz dziwny kielich, cały ze złota, wysadzany po bokach czerwonymi klejnotami.\nWidzisz że dziwna ciecz wypełnia go po brzegi. Nagle usłyszałeś ciche sapanie, widzisz w futrynie drzwi przerażającą sylwetke bestii. Widzisz jej zdeformowane ramiona z wybrzuszeniami, długie pazury oraz wykrzywione ze starości plecy, na oko ma 2,5 metra wzrostu.\nMożesz zaobserwować, że jakaś ciecz kapie na podłoge. Nie wiesz dlaczego, ale masz wielką nadzieje że to jednak ślina.\nNagle usłyszałeś jak w podłodze otworzyła sie klapa, niewiele myśląc wskakujesz do niej i znajdujesz się w innym pomieszczeniu. Uciekasz dalej");
@@ -238,6 +240,7 @@ public class rooms extends functions {
         System.out.println("Dobiegasz do drzwi które są całe zakrwawione. Widzisz że krew jest wszędzie wymieszana z kremówką, nawet spod drzwi cieknie.");
         System.out.println("[1] - Przechodzę przez drzwi\n[2] - Rozglądam się po pomieszczeniu");
         drzwi = scanner.nextInt();
+        animation();
         switch (drzwi) {
             case 1 -> przejsciePrzezDrzwi = false;
             case 2 -> {
@@ -299,6 +302,7 @@ public class rooms extends functions {
         System.out.println("Stoisz przed trzema pięknie wykończonymi parami drzwi. Czujesz że to już ostatnie przejście, ostatnie drzwi... niestety nie umiesz rozczytać zagadki, jest w niezrozumiałym dla ciebie języku... po włosku? Patrzysz na nią i próbujesz przeczytać:\n\"Pazzo dietro la terza porta, ma rilassati, non sarai ancora in grado di sfuggire alla bestia\"");
         System.out.println("Nie masz zielonego pojęcia jak zagadka ma ci pomóc w wyborze drzwi, jednak musisz podjąć szybko decyzję... przez które drzwi przechodzisz? [1-3]");
         drzwi = scanner.nextInt();
+        animation();
         System.out.println("*Powodzenia dzieciaku...*");
         ending();
     }
