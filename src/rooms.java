@@ -3,22 +3,16 @@
 // (powered by FernFlower decompiler)
 //
 
-import com.sun.jdi.InconsistentDebugInfoException;
-
-import java.awt.desktop.ScreenSleepEvent;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
+
 
 public class rooms extends functions {
     Scanner scanner;
 
-    public rooms(int drzwi, boolean przejsciePrzezDrzwi, boolean artefakt) {
-        super(drzwi, przejsciePrzezDrzwi, artefakt);
-        scanner = new Scanner(System.in);
-    }
+    //public rooms(int drzwi, boolean przejsciePrzezDrzwi, boolean artefakt) {
+    //    super(drzwi, przejsciePrzezDrzwi, artefakt);
+    //    scanner = new Scanner(System.in);
+    //}
 
     public rooms() {
         scanner = new Scanner(System.in);
@@ -33,7 +27,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         } catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -56,7 +50,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -73,15 +67,30 @@ public class rooms extends functions {
             String[] answers = {"puszka", "butelka", "telewizor"};
             System.out.println("Pamiętasz.... kolejny szczegół..... byłeś...... nie, jesteś uczniem.... 7 klasa..... prawdopodobnie...... ale co tu robisz?.... jak sie tu znalazłeś?........ kolejne drzwi.... gdzie ty jesteś....... co?.....");
             System.out.println("Widzisz 3 guziki: " + answers[0] + ", " + answers[1] + ", " + answers[2] + ".\nNad przyciskami wisi zagadka.");
-            String odp;
+            String odp = null;
             System.out.println("\"Na fotelu siedze ja,\nczasem tu są niezłe jaja,\nsiedze tutaj cały dzień,\nco oglądam proszę ja cie?\"");
-            odp = scanner.next();
+            try {
+                odp = scanner.next();
+            }catch (Exception exception) {
+                scanner.nextInt();
+                wrongDoorsValue();
+            }
             if (odp.equals(answers[2])) { //zamieniłem zwykłe odpowiedzi na tablice==ZAJEBIŚCIE CHUJU GŁUPI NIE WIEM JAK TO ZROBIĆ
                 System.out.println("\"Siedze dalej, pudło gra, może wypić coś się da?\nSam ja jestem proszę ciebie, cóż ja wypić mogę w tym niebie?\"");
-                odp = scanner.next();
+                try {
+                    odp = scanner.next();
+                }catch (Exception exception) {
+                    scanner.nextInt();
+                    wrongDoorsValue();
+                }
                 if (odp.equals(answers[0])) {
                     System.out.println("\"Przyszedł boczek, przyszła i menda,\njak powita gości zrzęda?\"");
-                    odp = scanner.next();
+                    try {
+                        odp = scanner.next();
+                    }catch (Exception exception) {
+                        scanner.nextInt();
+                        wrongDoorsValue();
+                    }
                     if (odp.equals(answers[1])) {
                         System.out.println("Jam jest Ferdynand Kiepski,\nbestia zamknęła mnie tu i usilnie próbuje wyważyć drzwi,\nostrzegam tego co to czyta aby uciekał czem prędzej przez trzecie drzwi!");
                         przejsciePrzezDrzwi = true;
@@ -103,7 +112,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -129,7 +138,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         drzwi--;
@@ -150,7 +159,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         animation();
@@ -159,9 +168,7 @@ public class rooms extends functions {
                 System.out.println("Przeszukujesz łóżko. Nie znajdujesz w nim nic użytecznego, usłyszałeś kroki bestii za drzwiami. Pod wpływem strachu schowałeś sie pod łóżko. Widzisz tylko obrzydliwe nogi które mają zgniłe paznokcie, haluksy i żółty kolor wymieszany z grzybicą. Słyszysz  śmiech potwora, następnie czujesz zimną dłoń na swojej kostce, bestia łapie cie i patroszy śmiejąc sie");
                 room1();
             }
-            case 2 -> {
-                System.out.println("Opuszczasz sypialnie.");
-            }
+            case 2 -> System.out.println("Opuszczasz sypialnie.");
             default -> wrongDoorsValue();
         }
         room7();
@@ -174,7 +181,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -193,7 +200,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -212,7 +219,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -231,7 +238,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -251,7 +258,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -270,7 +277,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         animation();
@@ -281,6 +288,7 @@ public class rooms extends functions {
             }
             case 2 -> {
                 System.out.println("Opuszczasz sypialnie.");
+                artefakt = false;
             }
             default -> wrongDoorsValue();
         }
@@ -294,7 +302,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         animation();
@@ -307,7 +315,7 @@ public class rooms extends functions {
                 try {
                     drzwi = scanner.nextInt();
                 }catch (Exception exception) {
-                    scanner.nextInt();
+                    scanner.next();
                     wrongDoorsValue();
                 }
                 switch (drzwi) {
@@ -334,7 +342,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -357,7 +365,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
+            scanner.next();
             wrongDoorsValue();
         }
         switch (drzwi) {
@@ -376,8 +384,7 @@ public class rooms extends functions {
         try {
             drzwi = scanner.nextInt();
         }catch (Exception exception) {
-            scanner.nextInt();
-            wrongDoorsValue();
+            drzwi = 0;
         }
         animation();
         System.out.println("*Powodzenia dzieciaku...*");
@@ -385,11 +392,11 @@ public class rooms extends functions {
     }
 
     public void ending() {
-        if (artefakt = true) {
+        if (artefakt) {
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
             System.out.println("GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
         }
-        if (artefakt = false) {
+        if (!artefakt) {
             System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie, już nie uciekasz, boisz się, bestia jednym ruchem łapy urywa ci ręke, padasz, krwawisz, bestia podchodzi, jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
             System.out.println("Hahahah głupcze, od teraz należysz do mnie!");
             System.out.println("Czujesz, jak twoja dusza przepada...");

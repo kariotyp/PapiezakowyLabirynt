@@ -9,9 +9,10 @@ public class functions{
     boolean artefakt = false;
 
     public functions(int drzwi, boolean przejsciePrzezDrzwi, boolean artefakt) {
+        random = new Random();
     }
     public functions() {
-
+        random = new Random();
     }
 
     public void room1() {
@@ -67,6 +68,7 @@ public class functions{
     public void zeruj() {
         setPrzejsciePrzezDrzwi(false);
         setDrzwi(0);
+        artefakt = false;
     }
 
     //gettery i settery
