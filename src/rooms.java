@@ -23,7 +23,7 @@ public class rooms extends functions {
         System.out.println("Budzisz sie.... nie wiesz gdzie jesteś...... jest ciemno.... mokro..... i śmierdzi kremówką....... szukasz po omacku czegokolwiek co mogłoby pomóc.... łapiesz coś podłóżnego....... chudego...... szukasz dalej..... dalej...... znajdujesz coś co w dotyku przypomina latarke......... zapalasz....... widzisz że to co wcześniej złapałeś to było ramie szkieleta małego dziecka......... tutaj jest pełno szkieletów....... wszytkie to dzieci......... słyszysz gdzieś ryki potwora........ pamiętasz........ złapało coś cie na ulicy kiedy wracałeś..... ale skąd?........ jedno jest pewne........ MUSISZ UCIEKAĆ");
         System.out.println("Dobiegasz do pierwszego rozwidlenia. Widzisz drzwi, 2 pary drzwi.\nNad drzwiami widzisz wiersz, wygląda na... zagadkę? Może to być podpowiedź, którymi drzwiami przejść");
         System.out.println("Gdy powstał świat,\nja już tam byłam,\ngdy ewolucja postępowała,\nja już tam byłam,\nwszystkie wojny,\nprzetrwałam,\nmój wiek jest tajemnicą,\ndumnie zasiadam w królestwie herbaty,\ncały świat jest mi poddany,\nkim jestem?");
-        System.out.println("Które drzwi wybierasz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi");
+        System.out.println("Które drzwi wybierasz?\n[1] - pierwsze drzwi z napisem ,,Maryla Rodowicz''\n[2] - drugie drzwi z napisem ,,Elżbieta II''");
         try {
             drzwi = scanner.nextInt();
         } catch (Exception exception) {
@@ -148,13 +148,13 @@ public class rooms extends functions {
             default -> wrongDoorsValue();
         }
         przejscie(przejsciePrzezDrzwi);
-        System.out.println("*Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś, HAHAHA!*");
+        System.out.println("*Trudne? Powinieneś sie domyślać mój drogi gdzie jesteś, HAHAHA!(o ╹‿ ╹ o)*");
         room6();
     }
 
     public void room6() {
         System.out.println("Czujesz w głębi serca, że coraz bardziej bestia zbliża sie do ciebie. Boisz sie jak nigdy dotąd, po ostatniej zagadce czujesz że jeśli nie wytężysz swej głowy i nie pośpieszysz sie z odpowiedziami, ZGINIESZ.");
-        System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu szukając czegoś użytecznego czy uciec przez któreś drzwi");
+        System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu  czegoś użytecznego czy uciec przez któreś drzwi");
         System.out.println("[1] - Chowam się pod łóżkiem w poszukianiu czegoś użytecznego\n[2] - Uciekam dalej");
         try {
             drzwi = scanner.nextInt();
@@ -176,7 +176,7 @@ public class rooms extends functions {
 
     public void room7() {
         System.out.println("Biegniesz dalej przez kolejne rozwidlenia, przypominasz sobie, że ty uciekałeś już wcześniej, koledzy cie nie zostawili,\nzostali....... zamordowani...... przez tego kultyste w pizzerii....");
-        System.out.println("Przed sobą widzisz trzy pary drzwi na których widnieją kolejno napisy napisy:\n na 1 drzwiach \"z warkoczykami\",\nna drugich \"obie\",\nzaś na trzecich \"bez warkoczyków\".\nGdy spoglądasz w górę, widzisz jak w miejscu zagadki tworzą się litery z ognia piekielnego i tworzą napis \"Jakie bestia lubi dziewczynki?\"");
+        System.out.println("Przed sobą widzisz trzy pary drzwi na których widnieją kolejno napisy:\n na 1 drzwiach \"z warkoczykami\",\nna drugich \"obie\",\nzaś na trzecich \"bez warkoczyków\".\nGdy spoglądasz w górę, widzisz jak w miejscu zagadki tworzą się litery z ognia piekielnego i tworzą napis \"Jakie bestia lubi dziewczynki?\"");
         System.out.println("Przez które drzwi przechodzisz?\n[1] - pierwsze drzwi\n[2] - drugie drzwi\n[3] - trzecie drzwi.");
         try {
             drzwi = scanner.nextInt();
@@ -185,8 +185,8 @@ public class rooms extends functions {
             wrongDoorsValue();
         }
         switch (drzwi) {
-            case 1, 2 -> przejsciePrzezDrzwi = false;
-            case 3 -> przejsciePrzezDrzwi = true;
+            case 1, 3 -> przejsciePrzezDrzwi = false;
+            case 2 -> przejsciePrzezDrzwi = true;
             default -> wrongDoorsValue();
         }
         przejscie(przejsciePrzezDrzwi);
@@ -247,7 +247,7 @@ public class rooms extends functions {
             default -> wrongDoorsValue();
         }
         przejscie(przejsciePrzezDrzwi);
-        System.out.println("*Tchórzysz? Czy może już tu byłeś i wiesz jak wygląda rozwiązanie? To bez znaczenia, i tak UMRZESZ!*"); //zmieniłem trochę tekst System.out.println("Tchórzysz? Czy może ciągle się odradzasz? Co za różnica I TAK W KOŃCU UMRZESZ (o ╹‿ ╹ o)");
+        System.out.println("*Tchórzysz? Czy może już tu byłeś i wiesz jak wygląda rozwiązanie? To bez znaczenia, i tak UMRZESZ!*(o ╹‿ ╹ o)"); //zmieniłem trochę tekst System.out.println("Tchórzysz? Czy może ciągle się odradzasz? Co za różnica I TAK W KOŃCU UMRZESZ (o ╹‿ ╹ o)");
         room11();
     }
 
@@ -272,7 +272,7 @@ public class rooms extends functions {
 
     public void room12() {
         System.out.println("Czujesz w głębi serca, że coraz bardziej bestia zbliża sie do ciebie. Boisz sie jak nigdy dotąd, po ostatniej zagadce czujesz że jeśli nie wytężysz swej głowy i nie pośpieszysz sie z odpowiedziami, ZGINIESZ.");
-        System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu szukając czegoś użytecznego czy uciec przez któreś drzwi");
+        System.out.println("Wbiegasz do następnego pokoju, widzisz przed sobą kolejne 2 pary drzwi. Gdy sie rozglądasz, zdajesz sobie sprawe że znajdujesz sie w pokoju w którym znajdują sie różne meble oraz.... łóżko. Czujesz, że bestia jest coraz bliżej i musisz szybko podjąć decyzje - przeszukać łóżko w poszukiwaniu czegoś użytecznego czy uciec przez któreś drzwi");
         System.out.println("[1] - Chowam się pod łóżkiem w poszukianiu czegoś użytecznego\n[2] - Uciekam dalej");
         try {
             drzwi = scanner.nextInt();
@@ -330,7 +330,7 @@ public class rooms extends functions {
             default -> wrongDoorsValue();
         }
         przejscie(przejsciePrzezDrzwi);
-        System.out.println("*Nieźle, nieźle, coraz bliżej końca. Ciesz się póki możesz, ON JUŻ JEST CORAZ BLIŻEJ HAHAHA!*");
+        System.out.println("*Nieźle, nieźle, coraz bliżej końca. Ciesz się póki możesz, ON JUŻ JEST CORAZ BLIŻEJ HAHAHA! (o ╹‿ ╹ o)*");
         room14();
 
     }
@@ -393,12 +393,12 @@ public class rooms extends functions {
 
     public void ending() {
         if (artefakt) {
-            System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
+            System.out.println("Wybiegasz na plac,widzisz kultystów,nie ma wyjścia,nie ma ratunku, z tego miejsca skąd przychodzisz widzisz bestie, podchodzi do ciebie,nawet nie uciekasz,boisz się, bestia jednym ruchem łapy urywa ci ręke,padasz,krwawisz,bestia podchodzi,jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
             System.out.println("GŁUPCZE! Zabiłeś moją zabawke, WIĘC TERAZ JA ZABIJE CIEBIE!\nPojawia się przed tobą czarna postać,czujesz jak twoja dusza... przepada...");
         }
         if (!artefakt) {
-            System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie, już nie uciekasz, boisz się, bestia jednym ruchem łapy urywa ci ręke, padasz, krwawisz, bestia podchodzi, jedyne co widziałeś to to jak bestia rozrywa twoje ciało śmiejąc się przy tym");
-            System.out.println("Hahahah głupcze, od teraz należysz do mnie!");
+            System.out.println("Wybiegasz na plac, widzisz kultystów. Nie ma wyjścia, nie ma ratunku, z tego miejsca skąd przyszedłeś widzisz bestie, podchodzi do ciebie. W przerażeniu przypominasz sobie o dziwnym kielichu, wyciagasz go i bez zastanowienia oblewasz bestie cieczą znajdującą się w naczyniu. Bestia krzyczy w agonii, wybija wszystkich swoich ludzi pod wpływem szału a następnie kładzie się na ziemi martwa. Jesteś wolny... na pewno?");
+            System.out.println("Hahahah głupcze, od teraz należysz do mnie! (o ╹‿ ╹ o)");
             System.out.println("Czujesz, jak twoja dusza przepada...");
         }
         System.out.println("\n\n");
